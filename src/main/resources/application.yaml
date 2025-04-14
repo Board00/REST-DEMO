@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/sniper_mastery?useSSL=false
+    username: root
+    password: "@boardKoni1234"
+
+  #JPA Settings
+  jpa.hibernate.ddl-auto: create
