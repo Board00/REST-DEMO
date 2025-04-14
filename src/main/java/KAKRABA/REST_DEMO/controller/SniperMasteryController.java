@@ -2,7 +2,10 @@ package KAKRABA.REST_DEMO.controller;
 
 
 import KAKRABA.REST_DEMO.model.SniperMastery;
+import KAKRABA.REST_DEMO.response.ResponseHandler;
 import KAKRABA.REST_DEMO.servive.SniperMasteryService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,9 +22,11 @@ public class SniperMasteryController
     }
     //Read one
     @GetMapping("{sniperId}")
-    public SniperMastery getSniperMasteryDetails(@PathVariable("sniperId") String sniperId)
+    public ResponseEntity<Object> getSniperMasteryDetails(@PathVariable("sniperId") String sniperId)
     {
-        return sniperMasteryService.getSniperMastery(sniperId);
+        return ResponseHandler.responseBuilder( "Requested Sniper Details given out",
+                HttpStatus.OK, sniperMasteryService.getSniperMastery(sniperId));
+
     }
     //read all
     @GetMapping()
