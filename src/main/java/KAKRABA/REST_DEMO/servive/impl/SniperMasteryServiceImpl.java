@@ -1,5 +1,6 @@
 package KAKRABA.REST_DEMO.servive.impl;
 
+import KAKRABA.REST_DEMO.exception.SniperMasteryNotFoundException;
 import KAKRABA.REST_DEMO.model.SniperMastery;
 import KAKRABA.REST_DEMO.repository.SniperMasteryRepository;
 import KAKRABA.REST_DEMO.servive.SniperMasteryService;
@@ -45,6 +46,8 @@ public class SniperMasteryServiceImpl implements SniperMasteryService
     public SniperMastery getSniperMastery(String sniperId)
     {
         // more validation can be added here
+        if(sniperMasteryRepository.findById(sniperId).isEmpty())
+           throw new SniperMasteryNotFoundException("Record not found with sniperId: " + sniperId);
         return sniperMasteryRepository.findById(sniperId).get();
     }
 
