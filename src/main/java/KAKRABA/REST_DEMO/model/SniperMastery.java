@@ -1,16 +1,23 @@
 package KAKRABA.REST_DEMO.model;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
 
 @Entity
 @Table(name = "sniper_info")
-
+@ApiModel(description = "Sniper Mastery Details")
 public class SniperMastery
 {
     @Id
+    @ApiModelProperty(notes = "This is the sniper id")
     private String sniperId;
     private String sniperName;
     private String sniperAddress;

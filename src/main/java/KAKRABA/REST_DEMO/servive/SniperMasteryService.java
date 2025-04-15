@@ -1,7 +1,6 @@
 package KAKRABA.REST_DEMO.servive;
 
 import KAKRABA.REST_DEMO.model.SniperMastery;
-
 import java.util.List;
 
 public interface SniperMasteryService
