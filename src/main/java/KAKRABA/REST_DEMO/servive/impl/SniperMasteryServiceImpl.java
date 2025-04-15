@@ -57,4 +57,9 @@ public class SniperMasteryServiceImpl implements SniperMasteryService
         // more validation can be added here
         return sniperMasteryRepository.findAll();
     }
+    @Override
+    public List<SniperMastery> getBySniperName(String SniperName)
+    {
+        return sniperMasteryRepository.findBySniperName(SniperName);
+    }
 }

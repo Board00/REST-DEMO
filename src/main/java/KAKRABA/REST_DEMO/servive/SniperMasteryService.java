@@ -11,4 +11,5 @@ public interface SniperMasteryService
     public String deleteSniperMastery(String sniperId);
     public SniperMastery getSniperMastery(String sniperId);
     public List<SniperMastery> getAllSniperMastery();
+    public List<SniperMastery> getBySniperName(String sniperName);
 }
